@@ -254,7 +254,7 @@ public class SshDownloader extends AbstractGerritStatsDownloader {
             if (projectNameList.isEmpty()) {
                 throw new IllegalStateException("No project name defined!");
             }
-            this.gerritQuery = String.format("project:{^%s}", projectNameList);
+            this.gerritQuery = String.format("project:{^%s} status:merged", projectNameList);
             if (afterDate != null) {
                 this.gerritQuery += String.format(" after:{%s}", afterDate);
                 }
